@@ -1,0 +1,29 @@
+{
+  "name": "projectDetails",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "clientName": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "probability": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "staffing": {
+      "type": "array"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
