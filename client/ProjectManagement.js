@@ -4,16 +4,16 @@ import { Router, Route, IndexRoute, browserHistory} from 'react-router';
 import { Provider } from 'react-redux';
 import css from './styles/custom.styl';
 import configureStore, { history } from './store';
-import App from './container/App';
-import PhotoGrid from './component/PhotoGrid';
+import LoginContainer from './container/LoginContainer';
+import LoginPage from './component/LoginPage';
 
 const store = configureStore();
 
 const router = (
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App}>
-        <IndexRoute component={PhotoGrid}></IndexRoute>
+      <Route path="/" component={LoginContainer}>
+        <IndexRoute component={LoginPage}></IndexRoute>
       </Route>
     </Router>
   </Provider>

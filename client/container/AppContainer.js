@@ -20,6 +20,6 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-const App = connect(mapStateToProps, mapDispatchToProps)(Project);
+const AppContainer = connect(mapStateToProps, mapDispatchToProps)(Project);
 
-export default App;
+export default AppContainer;
