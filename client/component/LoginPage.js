@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 
 class LoginPage extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.handleUsernameChange = this.handleUsernameChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
-  }
-  componentWillMount(){
-    this.props.signin();
+    console.log('---------------------', this.props);
   }
   handleUsernameChange(e) {
     this.setState({username: e.target.value});
