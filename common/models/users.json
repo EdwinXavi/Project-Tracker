@@ -1,6 +1,6 @@
 {
   "name": "users",
-  "base": "User",
+  "base": "Model",
   "idInjection": true,
   "options": {
     "validateUpsert": true
@@ -10,7 +10,7 @@
       "type": "string",
       "id": true
     },
-    "email": {
+    "emailId": {
       "type": "string"
     },
     "password": {

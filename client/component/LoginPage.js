@@ -1,13 +1,31 @@
 import React, { Component } from 'react';
 
 class LoginPage extends Component {
+  constructor() {
+    super();
+    this.handleUsernameChange = this.handleUsernameChange.bind(this);
+    this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
+  }
+  componentWillMount(){
+    this.props.signin();
+  }
+  handleUsernameChange(e) {
+    this.setState({username: e.target.value});
+  }
+  handlePasswordChange(e) {
+    this.setState({password: e.target.value});
+  }
+  handleLogin(e) {
+    e.preventDefault();
+  }
   render()  {
     return (
       <div className='wrapper'>
-        <form className='form-signin'>
+        <form ref='forms' className='form-signin' action='' onSubmit={this.handleLogin}>
           <h2 className='form-signin-heading'>Please Login</h2>
-          <input type='text' className='form-control' name='username' placeholder='username/email' required='' autoFocus='' />
-          <input type='password' className='form-control' name='password' placeholder='password' required=''/>
+          <input type='text' className='form-control' name='username' placeholder='username/email' onChange={this.handleUsernameChange} required='' autoFocus='' />
+          <input type='password' className='form-control' name='password' placeholder='password' onChange={this.handlePasswordChange} required=''/>
           <label className='checkbox'>
             <input type='checkbox' value='remember-me' id='rememberMe' name='rememberMe'/>Remember me
           </label>

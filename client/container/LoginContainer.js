@@ -4,10 +4,11 @@ import { signin, signinSuccess, signinFailure } from '../actions/UserActions';
 
 import LoginPage from '../component/LoginPage';
 
-//Client-Side validation
-// function validate(username, password) {
-//
-// }
+function mapStateToProps(state) {
+  return {
+    user: state.user
+  }
+}
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -19,6 +20,6 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-const LoginContainer = connect(null, mapDispatchToProps)(LoginPage);
+const LoginContainer = connect(mapStateToProps, mapDispatchToProps)(LoginPage);
 
 export default LoginContainer;
