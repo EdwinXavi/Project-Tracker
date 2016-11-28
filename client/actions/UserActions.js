@@ -22,11 +22,17 @@ export function signin(username, password) {
 }
 
 export function signinSuccess(user) {
-  console.log('----user---', user.data.user[0].username);
-  return {
-    type: 'SIGN_IN_SUCESS',
-    payload: user
-  };
+  console.log('----user---', typeof user.data.user[0].username);
+  if(typeof user.data.user[0].username === "string") {
+    return {
+      type: 'SIGN_IN_SUCESS',
+      payload: user
+    };
+  }
+  else {
+    console.log('Invalid credentials');
+    alert('Invalid credentials');
+  }
 }
 
 export function signinFailure(error) {

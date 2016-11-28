@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 
 class LoginPage extends Component {
   constructor(props) {
@@ -25,8 +26,10 @@ class LoginPage extends Component {
     } else if(username=='') {
       alert('enter username');
     }
-    else
+    else {
       this.props.signin(username,password);
+      this.context.router.push('/home');
+    }
     this.refs.loginForm.reset();
   }
   render()  {
@@ -42,5 +45,9 @@ class LoginPage extends Component {
     )
   }
 }
+
+LoginPage.contextTypes = {
+  router: React.PropTypes.object
+};
 
 export default LoginPage;
