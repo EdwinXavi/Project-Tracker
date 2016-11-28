@@ -6,6 +6,8 @@ import css from './styles/custom.styl';
 import configureStore, { history } from './store';
 import LoginContainer from './container/LoginContainer';
 import LoginPage from './component/LoginPage';
+import AppContainer from './container/AppContainer';
+import PhotoGrid from './component/PhotoGrid';
 
 const store = configureStore();
 
@@ -14,6 +16,9 @@ const router = (
     <Router history={history}>
       <Route path="/" component={LoginContainer}>
         <IndexRoute component={LoginPage}></IndexRoute>
+      </Route>
+      <Route path='/home' component={AppContainer}>
+        <IndexRoute component={PhotoGrid} />
       </Route>
     </Router>
   </Provider>

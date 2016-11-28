@@ -48,10 +48,9 @@ module.exports = function(User) {
     console.log('-----password', password);
 
     User.find({where: {username: username}}, function(err, data) {
-      console.log('---data---', data);
       if(!data.length){
           console.log('User does not exist!');
-          next(err, 'User does not exist');
+          next(err);
       }
       else {
         if(!revertedPassword.verify(password, data[0].password)){
