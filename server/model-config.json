@@ -40,5 +40,9 @@
   "users": {
     "dataSource": "ProjectDB",
     "public": true
+  },
+  "typeOfProjects": {
+    "dataSource": "ProjectDB",
+    "public": true
   }
 }

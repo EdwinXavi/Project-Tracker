@@ -17,9 +17,6 @@ module.exports = function(User) {
     var hashedPassword = passwordHash.generate(req.password);
     req.password = hashedPassword;
 
-    // var password = sodium_chloride(req.password);
-    // console.log('=========', password.passwordHash);
-
     const user = new User(req);
     user.save(function(err, data) {
       if (err)

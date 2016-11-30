@@ -2,7 +2,7 @@ function user(state = [], action) {
   if(action.type === "SIGN_IN") {
     console.log('in SIGN_IN reducer');
     return {
-      ...state, user
+      ...state
     };
   }
   else if(action.type === "SIGN_IN_SUCESS") {

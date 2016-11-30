@@ -1,12 +1,16 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
+import axios from 'axios';
+const revertedPassword = require('../../node_modules/password-hash/lib/password-hash');
 
 class LoginPage extends Component {
-  constructor(props) {
-    super(props);
-    //this.handleUsernameChange = this.handleUsernameChange.bind(this);
-    //this.handlePasswordChange = this.handlePasswordChange.bind(this);
+  constructor() {
+    super();
+    this.state = {
+      LoginUser: ''
+    }
     this.handleLogin = this.handleLogin.bind(this);
+    this.validateUser = this.validateUser.bind(this);
   }
   // handleUsernameChange(e) {
   //   this.setState({username: e.target.value});
@@ -14,6 +18,20 @@ class LoginPage extends Component {
   // handlePasswordChange(e) {
   //   this.setState({password: e.target.value});
   // }
+
+  validateUser(username, password) {
+    const _this = this;
+    const dataUser = axios.get('http://localhost:3000/api/users')
+      .then(function(response) {
+        const UserList = response.data.Users;
+        UserList.map(user => {
+          if(user.username == username && revertedPassword.verify(password, user.password)) {
+            _this.setState({LoginUser: username});
+          }
+        });
+      })
+  }
+
   handleLogin(e) {
     e.preventDefault();
     const username = this.refs.username.value;
@@ -27,11 +45,15 @@ class LoginPage extends Component {
       alert('enter username');
     }
     else {
+      this.validateUser(username, password);
       this.props.signin(username,password);
-      this.context.router.push('/home');
     }
-    this.refs.loginForm.reset();
+    if(!this.state.LoginUser == '') {
+      this.context.router.push('/home');
+      this.refs.loginForm.reset();
+    }
   }
+
   render()  {
     return (
       <div className='wrapper'>

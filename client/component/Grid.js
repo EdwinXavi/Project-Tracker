@@ -3,18 +3,13 @@ import { Link } from 'react-router';
 
 class Grid extends Component {
   render() {
-    const { project, i} = this.props;
+    const { type, i} = this.props;
     return (
-      <Link to={`/${project.clientName}`}>
+      <Link to={`${type.name}`}>
         <div className='col-md-4 grid'>
-          <div><p className="task-heading">{project.clientName}</p></div>
-          <div><p className="task-desc">{project.status}</p></div>
-          <div><p className="task-desc">{project.location}</p></div>
-          <div><p className="task-desc">{project.probability}</p></div>
-          <div><p className="task-desc"><b>Staffing: {project.staffing}</b></p></div>
+          <div><p className="task-heading">{type.name}</p></div>
         </div>
       </Link>
-
     )
   }
 }
