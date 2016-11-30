@@ -6,6 +6,10 @@ import Header from './Header'
 class HomePage extends Component {
   componentWillMount() {
     this.props.fetchTypes();
+    setTimeout(() => {
+     window.history.forward()
+   }, 0)
+   window.onunload=function(){null};
   }
   render() {
     const typeList = this.props.types[0].types;
