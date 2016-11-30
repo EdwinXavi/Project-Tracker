@@ -27,6 +27,7 @@ class LoginPage extends Component {
         UserList.map(user => {
           if(user.username == username && revertedPassword.verify(password, user.password)) {
             _this.setState({LoginUser: username});
+            _this.context.router.push('/home');
           }
         });
       })
@@ -47,9 +48,6 @@ class LoginPage extends Component {
     else {
       this.validateUser(username, password);
       this.props.signin(username,password);
-    }
-    if(!this.state.LoginUser == '') {
-      this.context.router.push('/home');
       this.refs.loginForm.reset();
     }
   }

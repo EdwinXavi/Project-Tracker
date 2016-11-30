@@ -17,8 +17,6 @@ export function signin(username, password) {
 }
 
 export function signinSuccess(user) {
-  console.log('----user---', user.data.user);
-  console.log('-------1------');
   if(user.data.user) {
     return {
       type: 'SIGN_IN_SUCESS',
