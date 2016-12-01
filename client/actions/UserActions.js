@@ -23,6 +23,9 @@ export function signinSuccess(user) {
       payload: user
     };
   }
+  else {
+    alert('Invalid user!');
+  }
 }
 
 export function signinFailure(error) {
