@@ -1,0 +1,30 @@
+{
+  "name": "employee",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "employeeID": {
+      "type": "string",
+      "id": true
+    },
+    "employeeName": {
+      "type": "string"
+    },
+    "emailId": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

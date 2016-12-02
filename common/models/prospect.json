@@ -1,0 +1,54 @@
+{
+  "name": "prospect",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "prospectID": {
+      "type": "string",
+      "id": true
+    },
+    "clientID": {
+      "type": "string"
+    },
+    "sapientPOCID": {
+      "type": "string"
+    },
+    "scgID": {
+      "type": "string"
+    },
+    "prospectName": {
+      "type": "string"
+    },
+    "forcastedRevenue": {
+      "type": "string"
+    },
+    "siRevenue": {
+      "type": "string"
+    },
+    "currencyCode": {
+      "type": "string"
+    },
+    "dateAdded": {
+      "type": "date"
+    },
+    "status": {
+      "type": "string"
+    },
+    "probability": {
+      "type": "string"
+    },
+    "nextUpdate": {
+      "type": "date"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

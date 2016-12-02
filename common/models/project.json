@@ -1,0 +1,42 @@
+{
+  "name": "project",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "pid": {
+      "type": "string",
+      "id": true
+    },
+    "prospectID": {
+      "type": "string"
+    },
+    "ProjectName": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "projectDescription": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

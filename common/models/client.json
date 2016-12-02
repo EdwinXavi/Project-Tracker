@@ -1,25 +1,29 @@
 {
-  "name": "projectDetails",
+  "name": "client",
   "base": "Model",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
+    "clientID": {
+      "type": "string",
+      "id": true
+    },
     "clientName": {
       "type": "string"
     },
-    "status": {
+    "clientPOCName": {
       "type": "string"
     },
-    "probability": {
+    "pocContactNumber": {
       "type": "string"
     },
-    "location": {
+    "region": {
       "type": "string"
     },
-    "staffing": {
-      "type": "array"
+    "city": {
+      "type": "string"
     }
   },
   "validations": [],

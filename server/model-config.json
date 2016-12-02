@@ -33,16 +33,26 @@
     "dataSource": "db",
     "public": false
   },
-  "projectDetails": {
+  "project": {
     "dataSource": "ProjectDB",
     "public": true
   },
-  "users": {
+  "employee": {
     "dataSource": "ProjectDB",
     "public": true
   },
   "typeOfProjects": {
     "dataSource": "ProjectDB",
     "public": true
+  },
+  "client": {
+    "dataSource": "ProjectDB",
+    "public": true
+  },
+  "scg": {
+    "dataSource": "ProjectDB"
+  },
+  "prospect": {
+    "dataSource": "ProjectDB"
   }
 }
