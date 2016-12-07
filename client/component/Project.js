@@ -6,7 +6,7 @@ class Project extends Component{
     return (
       <div>
         <div className='headers'>
-          <Header header='Project Management'></Header>
+          <Header header='Project Tracker'></Header>
         </div>
         <div>
           {React.cloneElement(this.props.children, this.props)}

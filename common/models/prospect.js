@@ -194,15 +194,92 @@ module.exports = function(Prospect) {
       verb: 'put'
     },
     accepts: [{
-      arg: 'scgID',
+      arg: 'prospectID',
       type: 'String',
-      required: true,
       description: 'Prospect ID',
+      required: true,
       http: {
         source: 'query'
       }
     }, {
-      arg: 'scgName',
+      arg: 'clientID',
+      type: 'String',
+      description: 'Prospect Name',
+      http: {
+        source: 'query'
+      }
+    },{
+      arg: 'sapientPOCID',
+      type: 'String',
+      description: 'Prospect Name',
+      http: {
+        source: 'query'
+      }
+    },{
+      arg: 'scgID',
+      type: 'String',
+      description: 'Prospect Name',
+      http: {
+        source: 'query'
+      }
+    },{
+      arg: 'prospectName',
+      type: 'String',
+      description: 'Prospect Name',
+      http: {
+        source: 'query'
+      }
+    },{
+      arg: 'forcastedRevenue',
+      type: 'String',
+      description: 'Prospect Name',
+      http: {
+        source: 'query'
+      }
+    },{
+      arg: 'siRevenue',
+      type: 'String',
+      description: 'Prospect Name',
+      http: {
+        source: 'query'
+      }
+    },{
+      arg: 'currencyCode',
+      type: 'String',
+      description: 'Prospect Name',
+      http: {
+        source: 'query'
+      }
+    },{
+      arg: 'dateAdded',
+      type: 'String',
+      description: 'Prospect Name',
+      http: {
+        source: 'query'
+      }
+    },{
+      arg: 'status',
+      type: 'String',
+      description: 'Prospect Name',
+      http: {
+        source: 'query'
+      }
+    },{
+      arg: 'probability',
+      type: 'String',
+      description: 'Prospect Name',
+      http: {
+        source: 'query'
+      }
+    },{
+      arg: 'nextUpdate',
+      type: 'String',
+      description: 'Prospect Name',
+      http: {
+        source: 'query'
+      }
+    },{
+      arg: 'notes',
       type: 'String',
       description: 'Prospect Name',
       http: {
@@ -215,9 +292,9 @@ module.exports = function(Prospect) {
     }
   });
 
-  Prospect.removeProspect = function(scgID, next) {
+  Prospect.removeProspect = function(prospectID, next) {
 
-    Prospect.remove({scgID: scgID}, function(err, data) {
+    Prospect.remove({prospectID: prospectID}, function(err, data) {
       if(err) {
         console.log('error occured: ', err);
       }
@@ -231,7 +308,7 @@ module.exports = function(Prospect) {
       verb: 'delete'
     },
     accepts: [{
-      arg: 'scgID',
+      arg: 'prospectID',
       type: 'String',
       description: 'Prospect ID',
       required: true,

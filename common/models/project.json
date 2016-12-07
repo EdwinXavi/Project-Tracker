@@ -33,10 +33,19 @@
     },
     "projectDescription": {
       "type": "string"
+    },
+    "type": {
+      "type": "string"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "prospect": {
+      "type": "hasOne",
+      "model": "prospect",
+      "foreignKey": "prospectID"
+    }
+  },
   "acls": [],
   "methods": {}
 }

@@ -19,15 +19,18 @@
     "pocContactNumber": {
       "type": "string"
     },
-    "region": {
-      "type": "string"
-    },
-    "city": {
+    "location": {
       "type": "string"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "prospects": {
+      "type": "hasMany",
+      "model": "prospect",
+      "foreignKey": "clientID"
+    }
+  },
   "acls": [],
   "methods": {}
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Grid from './Grid.js';
 import Select from 'react-select';
-import Header from './Header'
+import Header from './Header';
 
 class HomePage extends Component {
   componentWillMount() {

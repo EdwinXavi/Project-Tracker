@@ -1,25 +1,19 @@
 {
-  "name": "employee",
+  "name": "users",
   "base": "Model",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "employeeID": {
+    "username": {
       "type": "string",
       "id": true
-    },
-    "employeeName": {
-      "type": "string"
     },
     "emailId": {
       "type": "string"
     },
     "password": {
-      "type": "string"
-    },
-    "contact": {
       "type": "string"
     }
   },

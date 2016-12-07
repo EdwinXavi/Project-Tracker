@@ -48,7 +48,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "client": {
+      "type": "belongsTo",
+      "model": "client",
+      "foreignKey": "clientID"
+    },
+    "scg": {
+      "type": "hasOne",
+      "foreignKey": "scgID",
+      "modal": "scg"
+    }
+  },
   "acls": [],
   "methods": {}
 }

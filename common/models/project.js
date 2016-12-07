@@ -24,7 +24,7 @@ module.exports = function(Project) {
     }
   });
 
-  Project.addProject = function(pid, prospectID, ProjectName, location, stage, status, startDate, endDate, projectDescription, next) {
+  Project.addProject = function(pid, prospectID, ProjectName, location, stage, status, startDate, type, endDate, projectDescription, next) {
 
     const req = {
       pid,
@@ -34,6 +34,7 @@ module.exports = function(Project) {
       stage,
       status,
       startDate,
+      type,
       endDate,
       projectDescription
     };
@@ -108,6 +109,14 @@ module.exports = function(Project) {
         source: 'query'
       }
     },{
+      arg: 'type',
+      type: 'String',
+      required: true,
+      description: 'Type of Project',
+      http: {
+        source: 'query'
+      }
+    },{
       arg: 'endDate',
       type: 'Date',
       required: false,
@@ -130,7 +139,7 @@ module.exports = function(Project) {
     }
   });
 
-  Project.updateProject = function(pid, prospectID, ProjectName, location, stage, status, startDate, endDate, projectDescription, next) {
+  Project.updateProject = function(pid, prospectID, ProjectName, location, stage, status, type, startDate, endDate, projectDescription, next) {
 
     const req = {
       pid,
@@ -139,6 +148,7 @@ module.exports = function(Project) {
       location,
       stage,
       status,
+      type,
       startDate,
       endDate,
       projectDescription
@@ -208,6 +218,13 @@ module.exports = function(Project) {
         source: 'query'
       }
     },{
+      arg: 'type',
+      type: 'String',
+      description: 'Type of Project',
+      http: {
+        source: 'query'
+      }
+    },{
       arg: 'startDate',
       type: 'Date',
       description: 'Start Date of the project',
@@ -262,6 +279,35 @@ module.exports = function(Project) {
     returns: {
       arg: 'message',
       type: 'String'
+    }
+  });
+
+  Project.getProjectByType = function(type, next) {
+
+    Project.find({where: {type:type}}, function(err, data) {
+      if(err) {
+        console.log('error occured: ', err);
+      }
+      next(err,data);
+    });
+  }
+
+  Project.remoteMethod('getProjectByType', {
+    http: {
+      path: '/type',
+      verb: 'get'
+    },
+    accepts: [{
+      arg: "type",
+      type: "string",
+      required: true,
+      http: {
+        source: 'query'
+      }
+    }],
+    returns: {
+      arg: 'projects',
+      type: 'Project'
     }
   });
 };

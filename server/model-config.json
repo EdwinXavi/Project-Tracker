@@ -37,10 +37,6 @@
     "dataSource": "ProjectDB",
     "public": true
   },
-  "employee": {
-    "dataSource": "ProjectDB",
-    "public": true
-  },
   "typeOfProjects": {
     "dataSource": "ProjectDB",
     "public": true
@@ -53,6 +49,9 @@
     "dataSource": "ProjectDB"
   },
   "prospect": {
+    "dataSource": "ProjectDB"
+  },
+  "users": {
     "dataSource": "ProjectDB"
   }
 }
