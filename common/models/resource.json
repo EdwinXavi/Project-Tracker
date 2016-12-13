@@ -1,0 +1,42 @@
+{
+  "name": "resource",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "pid": {
+      "type": "string",
+      "id": true
+    },
+    "al": {
+      "type": "object"
+    },
+    "sal": {
+      "type": "object"
+    },
+    "manager": {
+      "type": "object"
+    },
+    "architect": {
+      "type": "object"
+    },
+    "dot": {
+      "type": "object"
+    },
+    "vp": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "project": {
+      "type": "belongsTo",
+      "model": "project",
+      "foreignKey": "pid"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

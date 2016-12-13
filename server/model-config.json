@@ -53,5 +53,9 @@
   },
   "users": {
     "dataSource": "ProjectDB"
+  },
+  "resource": {
+    "dataSource": "ProjectDB",
+    "public": true
   }
 }

@@ -25,3 +25,31 @@ export function fetchTypesFailure(error) {
     payload: error
   }
 }
+
+export function addType(name) {
+  const request = axios({
+    method: 'post',
+    url: 'http://localhost:3000/api/typeOfProjects?name=',
+    data: {
+      name: name
+    }
+  });
+  return {
+    type: "ADD_TYPE",
+    payload: request
+  };
+}
+
+export function addTypeSuccess(type) {
+  return {
+    type: 'ADD_TYPE_SUCCESS',
+    payload: type
+  }
+}
+
+export function addTypeFailure(error) {
+  return {
+    type: 'ADD_TYPE_FAILURE',
+    payload: error
+  }
+}
