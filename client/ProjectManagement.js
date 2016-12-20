@@ -6,21 +6,18 @@ import css from './styles/custom.styl';
 import configureStore, { history } from './store';
 
 import LoginContainer from './container/LoginContainer';
-import LoginPage from './component/LoginPage';
 import HomePageContainer from './container/HomePageContainer';
-import HomePage from './component/HomePage';
+import ForecastContainer from './container/ForecastContainer';
+
 
 const store = configureStore();
 
 const router = (
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={LoginContainer}>
-        <IndexRoute component={LoginPage}></IndexRoute>
-      </Route>
-      <Route path='/home' component={HomePageContainer}>
-        <IndexRoute component={HomePage} />
-      </Route>
+      <Route path="/" component={LoginContainer} />
+      <Route path="/home" component={HomePageContainer} />
+      <Route path="/Forecasting" component={ForecastContainer} />
     </Router>
   </Provider>
 )

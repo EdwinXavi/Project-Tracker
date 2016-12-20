@@ -1,6 +1,7 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchTypes, fetchTypesSuccess, fetchTypesFailure } from '../actions/HomePageActions';
+import * as actions from '../actions/HomePageActions';
 
 import HomePage from '../component/HomePage';
 
