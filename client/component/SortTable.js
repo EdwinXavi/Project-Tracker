@@ -4,9 +4,8 @@ class SortTable extends Component {
   render() {
     const { project, i } = this.props;
     return (
-      <div className="container">
         <div className="table-responsive">
-          <table className="table">
+          <table className="table table-bordered">
             <thead>
               <tr>
                 <th>{i+1}</th>
@@ -14,12 +13,11 @@ class SortTable extends Component {
                 <th>{project.pid}</th>
                 <th>{project.location}</th>
                 <th>{project.status}</th>
-                <th>{project.startDate}</th>
+                <th>{new Date(project.startDate).toUTCString().split(' ').slice(1,4).join(' ')}</th>
               </tr>
             </thead>
           </table>
         </div>
-      </div>
     )
   }
 }

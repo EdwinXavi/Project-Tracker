@@ -14,11 +14,10 @@ class ForecastPage extends Component {
           <div className='headers'>
             <Header header='Project Forecast' />
           </div>
-          <div>
           <div className="container">
             <h2>Project List</h2>
             <div className="table-responsive">
-              <table className="table">
+              <table className="table table-bordered">
                 <thead>
                   <tr>
                     <th>#</th>
@@ -31,10 +30,9 @@ class ForecastPage extends Component {
                 </thead>
               </table>
             </div>
-          </div>
-          </div>
-          <div>
-            {projects.map((project,i) => <SortTable {...this.props} key={i} project={project} i={i} /> )}
+            <div>
+              {projects.map((project,i) => <SortTable {...this.props} key={i} project={project} i={i} /> )}
+            </div>
           </div>
         </div>
       )
