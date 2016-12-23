@@ -6,12 +6,12 @@ class SortTable extends Component {
     const { project, i } = this.props;
     return (
         <tr>
-          <th>{i+1}</th>
-          <th>{project.ProjectName}</th>
-          <th>{project.status}</th>
-          <th>{project.pid}</th>
-          <th>{project.location}</th>
-          <th>{new Date(project.startDate).toUTCString().split(' ').slice(1,4).join(' ')}</th>
+          <td>{i+1}</td>
+          <td>{project.ProjectName}</td>
+          <td>{project.status}</td>
+          <td>{project.pid}</td>
+          <td>{project.location}</td>
+          <td>{new Date(project.startDate).toUTCString().split(' ').slice(1,4).join(' ')}</td>
         </tr>
     )
   }
