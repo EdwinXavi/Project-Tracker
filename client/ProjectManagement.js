@@ -9,6 +9,7 @@ import LoginContainer from './container/LoginContainer';
 import HomePageContainer from './container/HomePageContainer';
 import ForecastContainer from './container/ForecastContainer';
 
+import TypeList from './component/TypeList';
 
 const store = configureStore();
 
@@ -16,8 +17,12 @@ const router = (
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={LoginContainer} />
-      <Route path="/home" component={HomePageContainer} />
-      <Route path="/Forecasting" component={ForecastContainer} />
+      <Route path ="/home" component={HomePageContainer}>
+        <IndexRoute component={TypeList}/>
+      </Route>
+      <Route path="/:params" getComponents={(nextState) => {
+        console.log(nextState);
+      }} />
     </Router>
   </Provider>
 )

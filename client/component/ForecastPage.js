@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import SortTable from './SortTable';
-import {BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 
 class ForecastPage extends Component {
   constructor() {

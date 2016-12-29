@@ -41,18 +41,17 @@ module.exports = function(User) {
 
   User.login = function(username, password, next) {
 
-    console.log('-----username', username);
-    console.log('-----password', password);
-
     User.find({where: {username: username}}, function(err, data) {
       if(!data.length){
           console.log('User does not exist!');
+          err = "User does not exist";
           next(err);
       }
       else {
         if(!revertedPassword.verify(password, data[0].password)){
           console.log('Incorrect password');
-          next(err, 'Incorrect password');
+          err = "Incorrect Password";
+          next(err);
         }
         else {
           return new Promise((resolve, reject) => {
@@ -127,4 +126,5 @@ module.exports = function(User) {
       type: 'User'
     }
   });
+
 }
