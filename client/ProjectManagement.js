@@ -20,8 +20,15 @@ const router = (
       <Route path ="/home" component={HomePageContainer}>
         <IndexRoute component={TypeList}/>
       </Route>
-      <Route path="/:params" getComponents={(nextState) => {
-        console.log(nextState);
+      <Route path="/:params" getComponents={(nextState, cb) => {
+        if(nextState.params.params === 'Forecasting') {
+          require.ensure([], function(require) {
+            cb(null, ForecastContainer);
+          });
+        }
+        else {
+          console.log(nextState.params);
+        }
       }} />
     </Router>
   </Provider>
